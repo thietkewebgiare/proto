@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package api.common.v1;
+
+option go_package = "github.com/thietkewebgiare/common/v1;v1";
+
+
+enum Code {
+  OK = 0;
+  Bad_Request = 400;
+  Unauthorized = 401;
+  Not_Found = 404;
+  Internal_Server_Error = 500;
+
+}
