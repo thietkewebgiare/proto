@@ -20,4 +20,4 @@ api:
 			--grpc-gateway_out=paths=source_relative:. \
 			--openapiv2_out=. --openapiv2_opt=logtostderr=true\
 			--openapiv2_opt=allow_merge=true,merge_file_name=openapiv2 \
-		   	$(shell find find common user -type f -name "*.proto")
+		   	$(shell find find . -type f -name "*.proto" -not -path "./third_party/*")

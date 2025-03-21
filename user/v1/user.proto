@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package api.user.v1;
 
-option go_package = "github.com/thietkewebgiare/user/v1;v1";
+option go_package = "github.com/thietkewebgiare/proto/user/v1;v1";
 
 import "common/v1/common.proto";
 import "google/api/annotations.proto";
