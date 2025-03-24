@@ -6,7 +6,7 @@
   },
   "tags": [
     {
-      "name": "User"
+      "name": "UserService"
     }
   ],
   "consumes": [
@@ -17,8 +17,8 @@
   ],
   "paths": {
     "/v1/login": {
-      "post": {
-        "operationId": "User_Login",
+      "get": {
+        "operationId": "UserService_Login",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -35,16 +35,20 @@
         },
         "parameters": [
           {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/v1LoginRequest"
-            }
+            "name": "email",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "password",
+            "in": "query",
+            "required": false,
+            "type": "string"
           }
         ],
         "tags": [
-          "User"
+          "UserService"
         ]
       }
     }
@@ -72,7 +76,6 @@
         "details": {
           "type": "array",
           "items": {
-            "type": "object",
             "$ref": "#/definitions/protobufAny"
           }
         }
@@ -96,17 +99,6 @@
         "Internal_Server_Error"
       ],
       "default": "OK"
-    },
-    "v1LoginRequest": {
-      "type": "object",
-      "properties": {
-        "email": {
-          "type": "string"
-        },
-        "password": {
-          "type": "string"
-        }
-      }
     },
     "v1LoginResponse": {
       "type": "object",

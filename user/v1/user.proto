@@ -7,11 +7,11 @@ option go_package = "github.com/thietkewebgiare/proto/user/v1;v1";
 import "common/v1/common.proto";
 import "google/api/annotations.proto";
 
-service User {
+service UserService {
   rpc Login (LoginRequest) returns (LoginResponse){
     option (google.api.http) = {
-      post : "/v1/login",
-      body: "*"
+      get : "/v1/login",
+//      body: "*"
     };
   }
 }
